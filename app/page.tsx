@@ -2,15 +2,12 @@ import '@/app/globals.css';
 import Image from 'next/image';
 import kreten from '@/public/kreten.png';
 import { Inter } from 'next/font/google';
-import NavLinks from './links';
+import NavLinks from './Links';
 
 const poppins = Inter({
   weight: "400",
   subsets: ["latin"],
 });
-
-const inter = Inter({ subsets: ["latin"] });
-
 
 export default function Home() {
   return (

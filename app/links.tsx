@@ -3,9 +3,10 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const links = [
-  { name: 'Home', href: '#home'},
+  { name: 'Home', href: '/'},
   { name: 'About Me', href: '#aboutme'},
   { name: 'Projects', href: '#projects'},
   { name: 'Contact', href: '#contact'},
@@ -17,7 +18,7 @@ export default function NavLinks() {
 
   return (
     <>
-      <ul className='absolute right-3 items-center justify-end'>
+      <ul className='absolute right-3 items-center'>
         <li className='flex gap-x-3 pr-5'>
             {links.map((link) => {  
               return (
@@ -34,6 +35,7 @@ export default function NavLinks() {
                 </Link>
               );
             })} 
+            <ThemeToggle />
         </li>
       </ul>
     </>
