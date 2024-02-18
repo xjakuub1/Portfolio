@@ -6,11 +6,12 @@ import { BsSunFill } from "react-icons/bs";
 
 export default function ThemeToggle() {
     const [darkMode, setDarkMode] = useState(true);
+    const [icon, setIcon] = useState(true);
 
     useEffect(() => {
         const theme = localStorage.getItem('theme')
         if (theme === 'dark') {
-            setDarkMode(true);          
+            setDarkMode(false);          
         }
     }, [])
 
@@ -24,14 +25,14 @@ export default function ThemeToggle() {
         }
     }, [darkMode])
 
-    const themeOnClick = () => setDarkMode( prev => !prev)
+    const themeOnClick = () => setIcon( prev => !prev)
     return (
         <>
             <div 
-            className="h-8 w-8 rounded-full cursor-pointer"
+            className="h-8 w-8 cursor-pointer"
             onClick={(e) => { themeOnClick(); setDarkMode(!darkMode); }}
             >
-                {darkMode ? <BsSunFill size={27} color="white" className="pt-[1px]"/> : <FaMoon size={23} color="white" className="pt-0.5"/>}
+                {darkMode ? <FaMoon size={23} color="black" className="pt-0.5"/> : <BsSunFill size={27} color="white" className="pt-[1px]"/>}
             </div>
         </>
     )

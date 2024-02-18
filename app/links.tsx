@@ -14,7 +14,7 @@ const links = [
 
 export default function NavLinks() {
   const [selectedItem, setSelectedItem] = useState(links[0]);
-  const underline = 'bottom-[-1px] w-full h-1 bg-white'
+  const underline = 'bottom-[-1px] w-full h-1 bg-white dark:bg-black'
 
   return (
     <>
@@ -25,12 +25,12 @@ export default function NavLinks() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={link === selectedItem ? 'bg-neutral-700' : ''}
+                  className={link === selectedItem ? 'bg-neutral-700 rounded-t-sm dark:bg-neutral-200' : ''}
                   onClick={() => setSelectedItem(link)}
                 >
-                  <p className="text-white py-px px-2">{link.name}</p>
+                  <p className="text-white py-px px-2 dark:text-black">{link.name}</p>
                   {link === selectedItem ? (
-                    <motion.div className={underline} layoutId='bottom-[-1px] w-full h-1 bg-white' />
+                    <motion.div className={underline} layoutId='bottom-[-1px] w-full h-1 bg-white dark:bg-black' />
                   ) : null}
                 </Link>
               );
