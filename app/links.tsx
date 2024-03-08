@@ -8,7 +8,6 @@ import kreten from '@/public/kreten.png';
 import Image from 'next/image';
 
 const links = [
-  { name: 'Home', href: '#top'},
   { name: 'About Me', href: '#aboutme'},
   { name: 'Projects', href: '#projects'},
   { name: 'Contact', href: '#contact'},
@@ -17,7 +16,6 @@ const links = [
 export default function NavLinks() {
   const [selectedItem, setSelectedItem] = useState(links[0]);
   const underline = 'bottom-[-1px] w-full h-1 bg-white dark:bg-black'
-  const bgHover = 'bg-neutral-700 rounded-t-sm dark:bg-neutral-200';
   
   return (
     <>
